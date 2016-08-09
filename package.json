@@ -1,0 +1,39 @@
+{
+  "name": "reshape-include",
+  "description": "Include partials into your reshape templates",
+  "version": "0.0.0",
+  "author": "Jeff Escalante",
+  "ava": {
+    "verbose": "true"
+  },
+  "bugs": {
+    "url": "https://github.com/reshape/include/issues"
+  },
+  "dependencies": {
+    "reshape-plugin-util": "^0.1.0"
+  },
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "coveralls": "^2.11.12",
+    "nyc": "^7.1.0",
+    "reshape": "reshape/reshape",
+    "snazzy": "^4.0.1",
+    "standard": "^7.1.2"
+  },
+  "homepage": "https://github.com/reshape/include#readme",
+  "keywords": [
+    "html",
+    "include",
+    "reshape-plugin",
+    "transform"
+  ],
+  "license": "MIT",
+  "main": "lib",
+  "repository": "https://github.com/reshape/include",
+  "scripts": {
+    "coverage": "nyc ava && nyc report --reporter=html",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "lint": "standard | snazzy",
+    "test": "npm run lint && ava"
+  }
+}
