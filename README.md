@@ -5,7 +5,7 @@
 [![dependencies](https://img.shields.io/david/reshape/include.svg?style=flat-square)](https://david-dm.org/reshape/include)
 [![coverage](https://img.shields.io/coveralls/reshape/include.svg?style=flat-square)](https://coveralls.io/r/reshape/include?branch=master)
 
-Include other html files ("partials") into your html
+Include other HTML files ("partials") into your HTML.
 
 ### Install
 
@@ -57,8 +57,8 @@ All options are optional, none are required.
 
 | Name | Description | Default |
 | ---- | ----------- | ------- |
-| **root** | Root path to resolve the include from | the file's path |
-| **addDependencyTo** | Object with addDependency() method, taking file path as an argument. Called whenever a file is included | |
+| **root** | Root path to resolve the include from | the file's path. |
+| **addDependencyTo** | Object with addDependency() method, taking file path as an argument. Called whenever a file is included. | |
 
 ### License
 
