@@ -59,6 +59,7 @@ All options are optional, none are required.
 | ---- | ----------- | ------- |
 | **root** | Root path to resolve the include from | the file's path. |
 | **addDependencyTo** | Object with addDependency() method, taking file path as an argument. Called whenever a file is included. | |
+| **alias**| Object with alias mappings, each key is your reference and the corresponding value is the relative path to your file. { button: './views/button.html } | |
 
 ### License
 
