@@ -21,6 +21,14 @@ test('addDependencyTo option', (t) => {
   })
 })
 
+test('alias option', (t) => {
+  return process('alias', {
+    alias: {
+      button: 'partials/button.html'
+    }
+  })
+})
+
 test('include with no src errors', (t) => {
   return process('no_src')
     .catch((err) => {
