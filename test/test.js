@@ -68,7 +68,6 @@ function compare (t, name, options = {}) {
   const input = readFileSync(inputFile, 'utf8')
   const expected = readFileSync(path.join(fixtures, `${name}.expected.html`), 'utf8')
 
-
   return reshape({ plugins: include(options), filename: inputFile })
     .process(input)
     .then((res) => {
