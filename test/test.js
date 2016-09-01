@@ -9,6 +9,10 @@ test('default include html', (t) => {
   return compare(t, 'basic')
 })
 
+test('nested includes', (t) => {
+  return compare(t, 'nested')
+})
+
 test('root option', (t) => {
   return compare(t, 'rootOption', { root: path.join(fixtures, 'partials') })
 })
@@ -66,5 +70,7 @@ function compare (t, name, options = {}) {
 
   return reshape({ plugins: include(options), filename: inputFile })
     .process(input)
-    .then((res) => t.truthy(expected === res.output()))
+    .then((res) => {
+      t.truthy(expected === res.output())
+    })
 }
