@@ -1,7 +1,7 @@
 {
   "name": "reshape-include",
   "description": "include partials into your reshape templates",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "author": "Jeff Escalante",
   "ava": {
     "verbose": "true"
