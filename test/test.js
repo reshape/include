@@ -46,6 +46,7 @@ test('correctly reports source filename', (t) => {
     t.truthy(tree[0].content[1].location.filename.match(/partials\/button\.html/))
     return tree
   }
+  
 
   return reshape({
     plugins: [include(), trackAst],
