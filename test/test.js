@@ -9,6 +9,10 @@ test('default include html', (t) => {
   return compare(t, 'basic')
 })
 
+test('nested includes', (t) => {
+  return compare(t, 'nested')
+})
+
 test('root option', (t) => {
   return compare(t, 'rootOption', { root: path.join(fixtures, 'partials') })
 })
@@ -46,7 +50,6 @@ test('correctly reports source filename', (t) => {
     t.truthy(tree[0].content[1].location.filename.match(/partials\/button\.html/))
     return tree
   }
-  
 
   return reshape({
     plugins: [include(), trackAst],
