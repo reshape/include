@@ -82,7 +82,6 @@ All options are optional, none are required.
 | Name | Description | Default |
 | ---- | ----------- | ------- |
 | **root** | Root path to resolve the include from | the file's path. |
-| **addDependencyTo** | Object with addDependency() method, taking file path as an argument. Called whenever a file is included. | |
 | **alias**| Object with alias mappings, each key is your reference and the corresponding value is the relative path to your file. { button: './views/button.html } | |
 | **parserRules**| Array of objects that can include the `test` (regex) and `parser` (fn) keys. See readme for further details | |
 
