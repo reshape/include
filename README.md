@@ -60,6 +60,24 @@ All options are optional, none are required.
 | **root** | Root path to resolve the include from | the file's path. |
 | **alias**| Object with alias mappings, each key is your reference and the corresponding value is the relative path to your file. { button: './views/button.html } | |
 
+### Reporting Dependencies
+
+This plugin will report its dependencies in the standard format as dictated by [reshape-loader](https://github.com/reshape/loader) if you pass `dependencies: []` as an option to reshape when it runs. Dependencies will be available on the output object under the `dependencies` key. For example:
+
+```js
+const reshape = require('reshape')
+const include = require('reshape-include')
+
+reshape({ plugins: [include()], dependencies: []})
+  .process(someHtml)
+  .then((res) => {
+    console.log(res.dependencies)
+    console.log(res.output())
+  })
+```
+
+If you are using this with webpack, reshape-loader takes care of the dependency reporting and you don't have to do anything 😁
+
 ### License
 
 - Licensed under [MIT](LICENSE.md)
