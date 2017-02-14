@@ -51,6 +51,30 @@ Output:
 <p>after the partial</p>
 ```
 
+### Utilizing Different Parsers
+
+Sometimes, you might want to import a `html` file into a `sgr` file. Or maybe a `svg`. In these cases and any other where you are seeking to mix two files that are processed by different parsers, you can utilize the  `parserRules` config value. Example shown below:
+
+```js
+const htmlParser = require('reshape-parser')
+const sugarml = require('sugarml')
+
+reshape({
+  plugins: [
+    include({
+      parserRules: [
+        { test: /\.sgr$/, parser: sugarml }
+        { test: /\.html$/, parser: htmlParser }
+      ]
+    })
+  ]
+})
+```
+
+Note that anything not matched by a `parserRules` test will be parsed by whatever parser is being used by reshape from its primary config. So in the example above, the `html` test is unnecessary -- since reshape's default parser is `reshape-parser`, it will already use this for any file not matching `.sgr`.
+
+Note that *any* parser can be used here in theory, but it must output a valid [Reshape AST](https://github.com/reshape/reshape#reshape-ast). Feel free to make use of the [reshape AST validator](https://github.com/reshape/plugin-util#validatetreetree) if you want in the process.
+
 ### Options
 
 All options are optional, none are required.
@@ -60,6 +84,7 @@ All options are optional, none are required.
 | **root** | Root path to resolve the include from | the file's path. |
 | **addDependencyTo** | Object with addDependency() method, taking file path as an argument. Called whenever a file is included. | |
 | **alias**| Object with alias mappings, each key is your reference and the corresponding value is the relative path to your file. { button: './views/button.html } | |
+| **parserRules**| Array of objects that can include the `test` (regex) and `parser` (fn) keys. See readme for further details | |
 
 ### License
 

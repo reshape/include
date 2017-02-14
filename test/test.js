@@ -2,6 +2,7 @@ const include = require('..')
 const reshape = require('reshape')
 const test = require('ava')
 const path = require('path')
+const sugarml = require('sugarml')
 const {readFileSync} = require('fs')
 const fixtures = path.join(__dirname, 'fixtures')
 
@@ -55,6 +56,12 @@ test('correctly reports source filename', (t) => {
     plugins: [include(), trackAst],
     filename: inputFile
   }).process(readFileSync(inputFile, 'utf8'))
+})
+
+test('parserRules works correctly', (t) => {
+  return compare(t, 'parserRules', {
+    parserRules: [{ test: /\.sgr$/, parser: sugarml }]
+  })
 })
 
 function process (name, options = {}) {
