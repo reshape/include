@@ -18,20 +18,8 @@ test('root option', (t) => {
   return compare(t, 'rootOption', { root: path.join(fixtures, 'partials') })
 })
 
-test('addDependencyTo option', (t) => {
-  const includePath = path.join(fixtures, 'partials/button.html')
-
-  return process('basic', {
-    addDependencyTo: { addDependency: (p) => t.truthy(p === includePath) }
-  })
-})
-
 test('alias option', (t) => {
-  return process('alias', {
-    alias: {
-      button: 'partials/button.html'
-    }
-  })
+  return compare(t, 'alias', { alias: { button: 'partials/button.html' } })
 })
 
 test('include with no src errors', (t) => {
@@ -39,10 +27,6 @@ test('include with no src errors', (t) => {
     .catch((err) => {
       t.truthy(err.toString().match(/include tag has no "src" attribute/))
     })
-})
-
-test('invalid dependency add object errors', (t) => {
-  t.throws(() => include({ addDependencyTo: 1 }), '[reshape-include] "addDependencyTo" does not have an "addDependency" method')
 })
 
 test('correctly reports source filename', (t) => {
@@ -64,9 +48,17 @@ test('parserRules works correctly', (t) => {
   })
 })
 
-function process (name, options = {}) {
+test('correctly reports dependencies', (t) => {
+  return process('basic', {}, { dependencies: [] }).then((res) => {
+    t.truthy(res.dependencies)
+    t.regex(res.dependencies[0].file, /partials\/button\.html/)
+    t.regex(res.dependencies[0].parent, /fixtures\/basic\.html/)
+  })
+})
+
+function process (name, options = {}, reshapeOptions = {}) {
   const inputFile = path.join(fixtures, `${name}.html`)
-  return reshape({ plugins: include(options), filename: inputFile })
+  return reshape(Object.assign({ plugins: include(options), filename: inputFile }, reshapeOptions))
     .process(readFileSync(inputFile, 'utf8'))
 }
 
