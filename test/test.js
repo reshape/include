@@ -19,11 +19,7 @@ test('root option', (t) => {
 })
 
 test('alias option', (t) => {
-  return process('alias', {
-    alias: {
-      button: 'partials/button.html'
-    }
-  })
+  return compare(t, 'alias', { alias: { button: 'partials/button.html' } })
 })
 
 test('include with no src errors', (t) => {
@@ -53,7 +49,7 @@ test('parserRules works correctly', (t) => {
 })
 
 test('correctly reports dependencies', (t) => {
-  process('basic', {}, { dependencies: [] }).then((res) => {
+  return process('basic', {}, { dependencies: [] }).then((res) => {
     t.truthy(res.dependencies)
     t.regex(res.dependencies[0].file, /partials\/button\.html/)
     t.regex(res.dependencies[0].parent, /fixtures\/basic\.html/)

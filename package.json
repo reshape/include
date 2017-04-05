@@ -13,12 +13,12 @@
     "reshape-plugin-util": "^0.2.0"
   },
   "devDependencies": {
-    "ava": "^0.18.1",
+    "ava": "^0.19.0",
     "coveralls": "^2.11.12",
     "nyc": "^10.0.0",
     "reshape": "^0.4.0",
     "snazzy": "^6.0.0",
-    "standard": "^9.0.2",
+    "standard": "^10.0.0",
     "sugarml": "^0.5.0"
   },
   "homepage": "https://github.com/reshape/include#readme",
