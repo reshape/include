@@ -19,7 +19,7 @@
     "reshape": "^0.4.0",
     "snazzy": "^6.0.0",
     "standard": "^10.0.0",
-    "sugarml": "^0.5.0"
+    "sugarml": "^0.6.0"
   },
   "homepage": "https://github.com/reshape/include#readme",
   "keywords": [
