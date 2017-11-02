@@ -58,6 +58,7 @@ Sometimes, you might want to import a `html` file into a `sgr` file. Or maybe a 
 ```js
 const htmlParser = require('reshape-parser')
 const sugarml = require('sugarml')
+const include = require('reshape-include')
 
 reshape({
   plugins: [
