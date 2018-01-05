@@ -86,6 +86,10 @@ All options are optional, none are required.
 | **alias**| Object with alias mappings, each key is your reference and the corresponding value is the relative path to your file. { button: './views/button.html } | |
 | **parserRules**| Array of objects that can include the `test` (regex) and `parser` (fn) keys. See readme for further details | |
 
+#### `root`
+
+Setting `root` to a static value can be useful for managing nested templates. If you attempt to use relative paths in the `src` for your includes it won't always work. If you set `root` to the root folder containing your templates, then you can include any file in any other file using a (partial) full path - partial meaning relative to `root`.
+
 ### Reporting Dependencies
 
 This plugin will report its dependencies in the standard format as dictated by [reshape-loader](https://github.com/reshape/loader) if you pass `dependencies: []` as an option to reshape when it runs. Dependencies will be available on the output object under the `dependencies` key. For example:
