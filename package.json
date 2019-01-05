@@ -10,7 +10,7 @@
     "url": "https://github.com/reshape/include/issues"
   },
   "dependencies": {
-    "reshape-plugin-util": "^0.2.0"
+    "reshape-plugin-util": "^0.2.1"
   },
   "devDependencies": {
     "ava": "^0.19.0",
