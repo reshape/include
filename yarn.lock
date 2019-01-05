@@ -3353,9 +3353,10 @@ reshape-parser@^0.2.1:
   dependencies:
     parse5 "^2.1.5"
 
-reshape-plugin-util@^0.2.0:
+reshape-plugin-util@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/reshape-plugin-util/-/reshape-plugin-util-0.2.1.tgz#29358959d58c9eebca25c35efe0cc627817cf092"
+  integrity sha1-KTWJWdWMnuvKJcNe/gzGJ4F88JI=
   dependencies:
     when "^3.7.7"
 
@@ -3687,9 +3688,10 @@ strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
-sugarml@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/sugarml/-/sugarml-0.5.0.tgz#f4f04b7a59d12ae1a64fc733b67cd8575c25a8c8"
+sugarml@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/sugarml/-/sugarml-0.6.0.tgz#9276d5e23e9cd8026b7db7df9ca49e6b29e00fb6"
+  integrity sha512-G87v9gARj7u7QdyE19ipxeIG+3lWJthxsTwTDH3JkhADpRCxfxx4oGj+nZMa94c3nvKJizaNj4829lI0Ae35sQ==
   dependencies:
     code-frame "^5.0.0"
 
